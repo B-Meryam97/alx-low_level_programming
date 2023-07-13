@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
- * program prints the sentence
- * return always zero
+ * main - main function
+ *
+ * return: 0
  */
 int main(void)
 {
