@@ -3,7 +3,7 @@
 /**
  * main - printing size of various types
  *
- * Return : 0 if successful
+ * Returns 0 to indicate successful execution
  */
 
 int main(void)
