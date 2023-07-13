@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - printing size of various types
+ * main - Entry point
  *
- * Return 0 to indicate successful execution
+ * Return: 0 (Success)
  */
 
 int main(void)
