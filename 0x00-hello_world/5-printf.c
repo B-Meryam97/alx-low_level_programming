@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 /**
- * main - printing the sentence
+ * main - printing sentence
  *
- * Return: 0 always
+ * Return: always 0
  */
 
 int main(void)
 {
 	printf("with proper grammar, but the outcome is a piece of art,");
-	return (0);
+	return (0)
 }
