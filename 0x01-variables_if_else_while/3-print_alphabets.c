@@ -10,7 +10,6 @@ int main(void)
 {
 	int n = 97;
 	int o = 65;
-	
 	while (n <= 122)
 	{
 		putchar(n);
