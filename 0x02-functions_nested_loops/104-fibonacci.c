@@ -8,13 +8,13 @@ void print_fibonacci(int n)
 {
 	unsigned long fib1 = 1;
 	unsigned long fib2 = 2;
+	unsigned long fib;
+	int i;
 
 	/* Print the first two Fibonacci numbers separately */
 	printf("%lu, %lu", fib1, fib2);
 
 	/* Print the remaining Fibonacci numbers */
-	unsigned long fib;
-	int i;
 	for (i = 3; i <= n; i++)
 	{
 		fib = fib1 + fib2;
