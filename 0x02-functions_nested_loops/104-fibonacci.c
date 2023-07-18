@@ -4,28 +4,28 @@
  * print_fibonacci - Prints the first n Fibonacci numbers
  * @n: The number of Fibonacci numbers to print
  */
+
 void print_fibonacci(int n)
 {
-    unsigned long fib1 = 1;
-    unsigned long fib2 = 2;
-    unsigned long fib;
-    int i;
+	int fib1 = 1;
+	int fib2 = 2;
+	int fib;
 
-    if (n >= 1)
-        printf("%lu", fib1);
+	if (n >= 1)
+		printf("%d", fib1);
 
-    if (n >= 2)
-        printf(", %lu", fib2);
+	if (n >= 2)
+		printf(", %d", fib2);
 
-    for (i = 3; i <= n; i++)
-    {
-        fib = fib1 + fib2;
-        printf(", %lu", fib);
-        fib1 = fib2;
-        fib2 = fib;
-    }
+	for (int i = 3; i <= n; i++)
+	{
+		fib = fib1 + fib2;
+		printf(", %d", fib);
+		fib1 = fib2;
+		fib2 = fib;
+	}
 
-    printf("\n");
+	printf("\n");
 }
 
 /**
@@ -33,8 +33,9 @@ void print_fibonacci(int n)
  *
  * Return: Always 0
  */
+
 int main(void)
 {
-    print_fibonacci(98);
-    return (0);
+	print_fibonacci(98);
+	return (0);
 }
