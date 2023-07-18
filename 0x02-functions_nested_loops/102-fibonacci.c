@@ -17,11 +17,13 @@ int main(void)
 
 	printf("%u, %u", fib[0], fib[1]);
 
-	for (n = 2 ; n < (50 ; n++)
+	for (n = 2 ; n < 50 ; n++)
 	{
 		fib[n] = fib[n - 1] + fib[n - 2];
 		printf(", %u", fib[n]);
 	}
+
 	printf("\n");
+
 	return (0);
 }
