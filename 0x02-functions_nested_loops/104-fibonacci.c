@@ -11,18 +11,18 @@ void print_fibonacci(int n)
 	unsigned long fib;
 	int i;
 
-	/* Print the first two Fibonacci numbers separately */
-	printf("%lu, %lu", fib1, fib2);
+	if (n >= 1)
+		printf("%lu", fib1);
 
-	/* Print the remaining Fibonacci numbers */
+	if (n >= 2)
+		printf(", %lu", fib2);
+
 	for (i = 3; i <= n; i++)
 	{
 		fib = fib1 + fib2;
+		printf(", %lu", fib);
 		fib1 = fib2;
 		fib2 = fib;
-
-		/* Print the current Fibonacci number */
-		printf(", %lu", fib);
 	}
 
 	printf("\n");
