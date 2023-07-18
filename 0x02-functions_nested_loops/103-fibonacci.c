@@ -15,7 +15,7 @@ int main(void)
 	{
 		if (fib1 % 2 == 0)
 			even_sum += fib1;
-	
+
 	fib_sum = fib1 + fib2;
 	fib1 = fib2;
 	fib2 = fib_sum;
