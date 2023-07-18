@@ -1,6 +1,36 @@
 #include "main.h"
 #include <stdio.h>
-#include <gmp.h>
+#include <unistd.h>
+
+/**
+ * print_fibonacci - Prints the first n Fibonacci numbers
+ * @n: number of fib numbers to print
+ */
+
+void print_fibonacci(int n)
+{
+	unsigned long fib1 = 1;
+	unsigned long fib2 = 2;
+
+	printf("%lu, %lu, ", fib1, fib2);
+
+	for (int i = 3; i <= n; i++)
+	{
+		unsigned long fib = fib1 + fib2;
+		fib1 = fib2;
+		fib2 = fib;
+
+		printf("%lu", fib);
+
+		if (i != n)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
+
+	putchar('\n');
+}
 
 /**
  * main -Entry point
@@ -10,28 +40,6 @@
 
 int main(void)
 {
-	mpz_t fib1, fib2, fib_sum;
-	int count;
-
-	mpz_init_set_ui(fib1, 1);
-	mpz_init_set_ui(fib2, 2);
-	mpz_init(fib_sum);
-
-	gmp_printf("%Zd, %Zd", fib1, fib2);
-
-	for (count = 2; count < 98; count++)
-	{
-		mpz_add(fib_sum, fib1, fib2);
-
-		gmp_printf(", %Zd", fib_sum);
-
-		mpz_set(fib1, fib2);
-		mpz_set(fib2, fib_sum);
-	}
-
-	printf("\n");
-
-	mpz_clears(fib1, fib2, fib_sum, NULL);
-
+	print_fibonacci(98);
 	return (0);
 }
