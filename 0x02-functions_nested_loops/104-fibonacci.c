@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -14,10 +13,11 @@ void print_fibonacci(int n)
 	printf("%lu, %lu", fib1, fib2);
 
 	/* Print the remaining Fibonacci numbers */
+	unsigned long fib;
 	int i;
 	for (i = 3; i <= n; i++)
 	{
-		unsigned long fib = fib1 + fib2;
+		fib = fib1 + fib2;
 		fib1 = fib2;
 		fib2 = fib;
 
