@@ -6,13 +6,13 @@
  */
 void print_fibonacci(int n)
 {
-	unsigned long long fib1 = 1;
-	unsigned long long fib2 = 2;
-	unsigned long long fib;
+	unsigned long fib1 = 1;
+	unsigned long fib2 = 2;
+	unsigned long fib;
 	int i;
 
 	/* Print the first two Fibonacci numbers separately */
-	printf("%llu, %llu", fib1, fib2);
+	printf("%lu, %lu", fib1, fib2);
 
 	/* Print the remaining Fibonacci numbers */
 	for (i = 3; i <= n; i++)
@@ -22,7 +22,7 @@ void print_fibonacci(int n)
 		fib2 = fib;
 
 		/* Print the current Fibonacci number */
-		printf(", %llu", fib);
+		printf(", %lu", fib);
 	}
 
 	printf("\n");
@@ -38,4 +38,3 @@ int main(void)
 	print_fibonacci(98);
 	return (0);
 }
-
