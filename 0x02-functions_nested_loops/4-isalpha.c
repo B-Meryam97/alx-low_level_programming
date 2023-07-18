@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int _isalpha - checks for alpabetic characters
+ * _isalpha - checks for alpabetic characters
  * @c : character to be checked
  * Return: 1 if c is a letter (lowercase or uppercase), 0 otherwise
  */
