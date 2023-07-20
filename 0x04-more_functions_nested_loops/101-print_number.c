@@ -9,22 +9,23 @@
 void print_number(int n)
 {
 	int div = 1;
+	int m = n;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		m = -m;
 	}
 
-	while (n / div >= 10)
+	while (m / div >= 10)
 	{
 		div *= 10;
 	}
 
 	while (div != 0)
 	{
-		_putchar(n / div + '0');
-		n %= div;
+		_putchar(m / div + '0');
+		m %= div;
 		div /= 10;
 	}
 }
