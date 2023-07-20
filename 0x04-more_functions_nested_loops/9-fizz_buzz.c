@@ -35,6 +35,12 @@ void fizz_buzz(void)
 	printf("\n");
 }
 
+/**
+ * main - Entry point
+ *
+ * Return: 0 (success)
+ */
+
 int main(void)
 {
 	fizz_buzz();
