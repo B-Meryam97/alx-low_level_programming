@@ -1,47 +1,47 @@
 #include "main.h"
-#include <limits.h>
 
 /**
  * _atoi - convert a string to an integer
- * @s: pointer to the input string
+ * @s: string to be converted
  *
- * Return: the converted input string
+ * Return: converted integrer
  */
 
 int _atoi(char *s)
 {
-	int sign = 1;
-	int result = 0;
-	int i = 0;
+	int i, d, n, len, f, digit;
 
-	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == '\r' || s[i] == '\f' || s[i] == '\v')
-	{
-		i++;
-	}
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
 
-	while (s[i] == '-' || s[i] == '+')
+	while (s[len] != '\0')
+		len++;
+
+	while (i < len && f == 0)
 	{
 		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			sign *= -1;
-			i++;
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
 		}
-	}
-	while (s[i] >= '0' && s[i] <= '9')
-	{
-		if (result > (INT_MAX - (s[i] - '0')) / 10)
-		{
-			if (sign == 1)
-			{
-				return (INT_MAX);
-			}
-			else
-			{
-				return (INT_MIN);
-			}
-		}
-		result = result * 10 + (s[i] - '0');
 		i++;
 	}
-	return (result * sign);
+
+	if (f == 0)
+		return (0);
+
+	return (n);
 }
