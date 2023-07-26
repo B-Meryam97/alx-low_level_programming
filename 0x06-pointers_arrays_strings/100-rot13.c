@@ -1,25 +1,29 @@
 #include "main.h"
 
 /**
- * rot13 - Encodes a string using rot13.
- * @str: Pointer to the string to be encoded.
- *
- * Return: A pointer to the resulting encoded string.
+ * rot13 - encodes a string using rot13
+ * @s: input string.
+ * Return: the pointer to dest.
  */
 
-char *rot13(char *str)
+char *rot13(char *s)
 {
-	char *ptr = str;
+	int i, j;
 
-	while (*ptr != '\0')
+	char *x = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *y = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if ((*ptr >= 'A' && *ptr <= 'Z') || (*ptr >= 'a' && *ptr <= 'z'))
+		for (j = 0; x[j] != '\0'; j++)
 		{
-			char rotate_by = (*ptr >= 'a' && *ptr <= 'z') ? 'a' : 'A';
-			*ptr = (*ptr - rotate_by + 13) % 26 + rotate_by;
+			if (s[i] == x[j])
+			{
+				s[i] = y[j];
+				break;
+			}
 		}
-		ptr++;
 	}
 
-	return (str);
+	return (s);
 }
