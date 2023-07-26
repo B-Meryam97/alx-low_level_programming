@@ -7,25 +7,25 @@
 
 void print_number(int n)
 {
-	int divisor = 1;
-	int digit;
-	int num = n;
+	int power = 1;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		num = -num;
+		n = -n;
 	}
 
-	while (num / divisor >= 10)
+	/* Calculate the power of 10 closest to the given number */
+	while ((n / power) >= 10)
 	{
-		divisor *= 10;
+		power *= 10;
 	}
-	while (divisor > 0)
+
+	/* Extract and print each digit */
+	while (power > 0)
 	{
-		digit = num / divisor;
-		_putchar(digit + '0');
-		num %= divisor;
-		divisor /= 10;
+		_putchar((n / power) + '0');
+		n %= power;
+		power /= 10;
 	}
 }
