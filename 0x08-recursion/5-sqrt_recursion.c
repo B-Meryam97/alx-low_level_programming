@@ -1,35 +1,24 @@
 #include "main.h"
 
 /**
- * find_sqrt - Recursive helper function to find the square root.
- * @n: The number for which we need to find the square root.
- * @start: The starting point for the search.
- * @end: The ending point for the search.
+ * actual_sqrt_recursion - Recursive helper function to find the square root.
+ * @n: number to calculate the sqaure root of.
+ * @i: iterator.
  *
- * Return: The square root of n, or -1.
+ * Return: resulting square root.
  */
 
-int find_sqrt(int n, int start, int end)
+int actual_sqrt_recursion(int n, int i)
 {
-	int mid;
-	unsigned int mid_squared;
-
-	if (start <= end)
+	if (i * i > n)
 	{
-		mid = start + (end - start) / 2;
-		mid_squared = (unsigned int)mid * mid;
-
-		if (mid_squared == (unsigned int)n)
-		{
-			return (mid);
-		}
-		if (mid_squared > (unsigned int)n)
-		{
-			return (find_sqrt(n, start, mid - 1));
-		}
-		return (find_sqrt(n, mid + 1, end));
+		return (-1);
 	}
-	return (-1);
+	if (i * i == n)
+	{	
+		return (i);
+	}
+	return (actual_sqrt_recursion(n, i + 1));
 }
 
 /**
@@ -45,5 +34,5 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	return (find_sqrt(n, 0, n));
+	return (actual_sqrt_recursion(n, 0));
 }
