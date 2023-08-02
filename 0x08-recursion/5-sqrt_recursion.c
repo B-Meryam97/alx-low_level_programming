@@ -12,26 +12,24 @@
 int find_sqrt(int n, int start, int end)
 {
 	int mid;
-	int mid_squared;
+	unsigned int mid_squared;
 
-	if (start > end)
+	if (start <= end)
 	{
-		return (-1);
-	}
+		mid = start + (end - start) / 2;
+		mid_squared = (unsigned int)mid * mid;
 
-	mid = start + (end - start) / 2;
-	mid_squared = mid * mid;
-
-	if (mid_squared == n)
-	{
-		return (mid);
+		if (mid_squared == (unsigned int)n)
+		{
+			return (mid);
+		}
+		if (mid_squared > (unsigned int)n)
+		{
+			return (find_sqrt(n, start, mid - 1));
+		}
+		return (find_sqrt(n, mid + 1, end));
 	}
-	if (mid_squared > n)
-	{
-		return (find_sqrt(n, start, mid - 1));
-	}
-
-	return (find_sqrt(n, mid + 1, end));
+	return (-1);
 }
 
 /**
