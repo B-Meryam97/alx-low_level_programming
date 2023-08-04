@@ -2,6 +2,8 @@
 
 /**
  * main - Entry point.
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings representing the arguments.
  *
  * Return: 0 (success)
  */
