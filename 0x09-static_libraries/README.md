@@ -1,0 +1,1 @@
+readme fot static libraries
