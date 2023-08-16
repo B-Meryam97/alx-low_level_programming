@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		return (2);
-        }
+	}
 
 	main_start = (unsigned char *)main;
 
